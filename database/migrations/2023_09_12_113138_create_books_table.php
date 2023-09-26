@@ -1,5 +1,6 @@
 <?php
-use App\Models\book;
+
+use App\Models\Book;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,17 +17,18 @@ return new class extends Migration
             $table->string('author', 32);
             $table->string('title', 150);
             $table->integer('pieces')->default(50);
-            
             $table->timestamps();
         });
+
         Book::create([
-            'book_id' => "1",
-            'author' => "valaki",
-            'title' => "Igen"
-        ],[
-            'book_id' => "2",
-            'author' => "valaki10",
-            'title' => "Igen10"
+            'author' => "Valaki", 
+            'title' => 'valaki valahol', 
+            'pieces' => 10
+        ]);
+
+        Book::create([
+            'author' => "Valakik", 
+            'title' => 'valakik valahol'
         ]);
     }
 
