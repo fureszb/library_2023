@@ -20,8 +20,8 @@ class BookController extends Controller
     }
     public function destroy($id)
     {
-        Book::find($id)->delete();
-        return redirect('/book/list');
+      Book::find($id)->delete();
+      return redirect('/book/list');
     }
 
     public function store(Request $request)
@@ -44,17 +44,17 @@ class BookController extends Controller
     }
 
     public function editview ($id){
-        $books = Book::find ($id); 
+        $books = Book::find ($id);
         return view('book.edit', ['book' => $books]);
     }
     public function listview(){
-        $books = Book::all(); 
+        $books = Book::all();
         return view('book.list', ['book' => $books]);
-    } 
-    public function newView(){
-        $books = Book::all(); 
-        return view ('books.new', ['book' => $books]); 
     }
-    
+    public function newView(){
+        $books = Book::all();
+        return view ('books.new', ['book' => $books]);
+    }
+
 }
 
